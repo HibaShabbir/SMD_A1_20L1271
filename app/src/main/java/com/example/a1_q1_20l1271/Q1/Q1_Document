@@ -45,7 +45,3 @@ To efficiently address the diamond problem and ensure code clarity, we employ th
    - In our code example, we've implemented the `print` method in each class, enabling fine-grained control over how each class prints its information.
 
 By applying these strategies, we effectively address the diamond problem. Each class can access and customize the functionality it needs without encountering ambiguity, resulting in a clean and structured solution.
-
----
-
-Feel free to use this explanation in your GitHub README to help others understand the diamond problem and its solution in your code repository.
