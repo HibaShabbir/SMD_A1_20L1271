@@ -7,11 +7,29 @@ class Faculty : Staff() {
     var noOfStudent: Int = 0
     var qualification: String = ""
 
+    val subjectsTaught: ArrayList<String> = ArrayList()
+
     fun teach(course: String): String {
-        return "$name (Faculty) taught $course to $noOfStudent students"
+        subjectsTaught.add(course)
+        return "$name (Faculty) teaches $course"
     }
 
-    fun assess(studentGrade: String): String {
-        return "$name (Faculty) assessed student's grade: $studentGrade"
+    fun assessStudent(student: Student, course: String, grade: Int) : String{
+        if (subjectsTaught.contains(course)) {
+            student.assignGrade(course, grade)
+            println("$name (Faculty) assigned a grade of $grade to ${student.name} for the course $course")
+        } else {
+            println("$name (Faculty) cannot assign a grade for $course to ${student.name}")
+        }
+
+        // Define your grading criteria based on marks
+        return when (grade) {
+            in 90..100 -> "A"
+            in 80 until 90 -> "B"
+            in 70 until 80 -> "C"
+            in 60 until 70 -> "D"
+            else -> "F"
+        }
     }
+
 }

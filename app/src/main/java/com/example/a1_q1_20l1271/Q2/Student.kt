@@ -9,16 +9,27 @@ open class Student : Person() {
     var college: String = ""
     var grade: Int = 0
 
-    override fun register(UID: String): String {
-        return "$name, a student at $college, registered with UID: $UID"
+    var coursesRegistered :ArrayList<String> = ArrayList()
+    private val courseGrades: MutableMap<String, Int> = mutableMapOf()
+
+
+    override fun register(course: String): String {
+        coursesRegistered.add(course)
+        return "$name, a student at $college, registered in course: $course"
     }
 
-    fun getGrade(course: String): Int {
-        // Implement grade retrieval logic here
-        return grade
+    fun assignGrade(course: String, grade: Int) {
+        if (this.coursesRegistered.contains(course))
+            courseGrades[course] = grade
+        else
+            println("Can not assign grade to a student not enrolled in the course ($course)")
     }
 
-    fun attend(courseClass: String): String {
+    fun getGrade(course: String): Int? {
+        return courseGrades[course]
+    }
+
+    override fun attend(courseClass: String): String {
         return "$name attended $courseClass class"
     }
 

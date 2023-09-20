@@ -8,7 +8,8 @@ open class Staff : Person() {
     var empSalary: Float = 0.0f
     var empExperience: Int = 0
 
-    fun attend(duty: String): String {
+
+    override fun attend(duty: String): String {
         return "$name attended duty: $duty"
     }
 
