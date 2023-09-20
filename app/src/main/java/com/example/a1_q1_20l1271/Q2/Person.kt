@@ -1,7 +1,7 @@
 package com.example.a1_q1_20l1271.Q2
 
 // Base class Person
-open abstract class Person {
+abstract class Person {
     var aadharID: Int = 0
     var name: String = ""
     var address: String = ""
@@ -23,4 +23,6 @@ open abstract class Person {
     fun like(item: String): String {
         return "$name liked item: $item"
     }
+
+    abstract fun attend(dutyOrClass: String):String
 }
