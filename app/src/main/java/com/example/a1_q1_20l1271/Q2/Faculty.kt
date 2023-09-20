@@ -14,7 +14,7 @@ class Faculty : Staff() {
         return "$name (Faculty) teaches $course"
     }
 
-    fun assessStudent(student: Student, course: String, grade: Int) : String{
+    fun assessStudent(student: Student, course: String, grade: Int): String {
         if (subjectsTaught.contains(course)) {
             student.assignGrade(course, grade)
             println("$name (Faculty) assigned a grade of $grade to ${student.name} for the course $course")

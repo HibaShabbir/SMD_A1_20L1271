@@ -9,7 +9,7 @@ open class Student : Person() {
     var college: String = ""
     var grade: Int = 0
 
-    var coursesRegistered :ArrayList<String> = ArrayList()
+    var coursesRegistered: ArrayList<String> = ArrayList()
     private val courseGrades: MutableMap<String, Int> = mutableMapOf()
 
 

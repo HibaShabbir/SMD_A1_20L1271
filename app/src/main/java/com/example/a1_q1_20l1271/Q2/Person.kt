@@ -24,5 +24,5 @@ abstract class Person {
         return "$name liked item: $item"
     }
 
-    abstract fun attend(dutyOrClass: String):String
+    abstract fun attend(dutyOrClass: String): String
 }
